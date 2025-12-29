@@ -1,0 +1,275 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: #eaeaea;
+  overflow-x: hidden;
+}
+
+/* HERO */
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%;
+  background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#canvas-container {
+  position: relative; /* necessary for absolute positioning inside */
+  display: inline-block; /* shrink to canvas size */
+}
+
+#three-canvas {
+  display: block; /* remove extra space below canvas */
+}
+
+#drag-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* true center of canvas */
+  color: #1b005f7c;
+  font-size: 3rem;
+  font-weight: 500;
+  pointer-events: none; 
+  opacity: 1;
+  z-index: 10; 
+  transition: opacity 0.5s ease;
+}
+
+
+#drag-hint.hidden {
+  opacity: 0;
+}
+
+.hero-text {
+  max-width: 50%;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease-out;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  background: linear-gradient(90deg, #3a00cc, #008cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+#three-canvas {
+  width: 600px;
+  height: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 60px #4000e389;
+  transition: transform 0.5s ease;
+}
+
+#three-canvas:hover {
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
+
+/* SECTIONS */
+section {
+  padding: 6rem 10%;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #23007a, #008cff);
+  border-radius: 2px;
+}
+
+/* PROJECTS */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+
+.project-card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.05); /* subtle border for depth */
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: #008cff; /* neon accent */
+}
+
+.project-card p {
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px #4000e389;
+  border-color: #4000e389;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.project-video {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover; /* fills the container nicely */
+  max-height: 400px; /* keeps videos small */
+}
+
+
+/* SKILLS */
+/* ===== Skills Terminal ===== */
+.skills-terminal {
+  background: #0e0e0e;
+  border: 2px solid #008cff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 1200px;
+  width: 95%;
+  margin: 3rem auto;
+  font-family: 'Courier New', monospace;
+  color: #008cff;
+  box-shadow: 0 0 40px #4000e389;
+}
+
+.terminal-header {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #23007a;
+  padding-bottom: 0.5rem;
+}
+
+.terminal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== Skill Line ===== */
+.skill-line {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #008cff55;
+}
+
+/* ===== Skill Name Typing Animation ===== */
+.skill-line span.skill-name {
+  display: inline-block;
+  font-size: 1.3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid #008cff;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== Grades Styling ===== */
+.skill-line span.grade {
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  border: 1px solid #008cff55;
+  text-align: center;
+}
+
+/* Grade colors using your palette */
+.grade-A+ { background-color: #23007a; color: #008cff; }
+.grade-A  { background-color: #23007a; color: #008cff; }
+.grade-B  { background-color: #4000e389; color: #008cff; }
+.grade-C  { background-color: #2b005f; color: #008cff; }
+
+/* FOOTER */
+footer {
+  text-align: center;       /* centers the content horizontally */
+  padding: 3rem 0;
+  opacity: 0.6;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+  color: #aaa !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-size: 1.5rem;
+}
+
+footer a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 5px #aaa77f33;
+}
+
+/* Fade-in animation for scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

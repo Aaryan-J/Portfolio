@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaryan Joshi | Game Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section id="hero" class="fade-in">
+    <div class="hero-text fade-in visible">
+        <h1>Aaryan Joshi</h1>
+        <p>Game Developer • Real-Time Systems • Interactive AI</p>
+    </div>
+    <div id="canvas-container">
+        <canvas canvas id="three-canvas"></canvas>
+        <div id="drag-hint">Drag to rotate</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade-in">
+    <h2>About</h2>
+    <h3>Games captured my imagination from an early age—how rules, visuals, and sound could intertwine to create something alive. These days, I like to craft small interactive experiences where players’ choices leave a mark, and where mechanics can surprise both the player and myself.
+
+Since I started exploring game development in 2020, I’ve been learning by doing—tinkering with AI, testing dynamic gameplay ideas, and shaping worlds that didn’t exist before. Not every experiment worked, but each taught me something new, and the worlds that did come to life keep fueling my curiosity to push further.</h3>
+  </section>
+
+  <!-- SKILLS -->
+<section id="skills">
+  <h2 class="fade-in">Skills</h2>
+
+  <div class="skills-terminal">
+  <div class="terminal-header">Skills Terminal</div>
+  <div class="terminal-body">
+    <div class="skill-line">
+      <img src="assets/images/unity.png" alt="Unity Icon" class="skill-icon">
+      <span class="skill-name">Unity Development (C#)</span>
+      <span class="grade grade-A+">A</span>
+    </div>
+    <div class="skill-line">
+      <img src="assets/images/python.png" alt="Python Icon" class="skill-icon">
+      <span class="skill-name">Python</span>
+      <span class="grade grade-A">B</span>
+    </div>
+    <div class="skill-line">
+      <img src="assets/images/blender.png" alt="Blender Icon" class="skill-icon">
+      <span class="skill-name">Blender</span>
+      <span class="grade grade-B">A</span>
+    </div>
+    <div class="skill-line">
+      <img src="assets/images/csharp.png" alt="C# Icon" class="skill-icon">
+      <span class="skill-name">C#</span>
+      <span class="grade grade-A">B</span>
+    </div>
+    <div class="skill-line">
+      <img src="assets/images/git.png" alt="Git Icon" class="skill-icon">
+      <span class="skill-name">Git & Version Control</span>
+      <span class="grade grade-B">A+</span>
+  </div>
+    <div class="skill-line">
+        <img src="assets/images/threejs.png" alt="JavaScript Icon" class="skill-icon">
+        <span class="skill-name">Three.js</span>
+        <span class="grade grade-B">C</span>
+    </div>
+</div>
+</section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+  <h2 class="fade-in">Projects</h2>
+
+  <div class="project-cards">
+    <div class="project-card fade-in">
+      <h3>Rhythm Game (Unity)</h3>
+      <video autoplay loop muted playsinline class="project-video">
+        <source src="assets/videos/rhythm-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>A timing-based rhythm game focused on input accuracy and synchronization with music. The project experiments with hit windows, feedback systems, and precise input handling to make each note feel satisfying. Through this, I learned how to balance difficulty, polish moment-to-moment gameplay, and design systems where even small mistakes feel intentional.</p>
+    </div>
+
+    <div class="project-card fade-in">
+      <h3>MusiCLI (Python)</h3>
+      <video autoplay loop muted playsinline class="project-video">
+        <source src="assets/videos/musicli-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>A terminal-based music recommendation system that suggests tracks based on mood and text input. The project uses simple NLP techniques and rule-based logic to interpret user intent and generate recommendations. It was an experiment in combining programming with personal interests, focusing more on logic and interaction than flashy visuals.  </p>
+    </div>
+
+    <div class="project-card fade-in">
+      <h3>Voice Assistant for PWD (Python)</h3>
+      <video autoplay loop muted playsinline class="project-video">
+            <source src="assets/videos/va-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+      </video>
+      <p>An offline, terminal-driven voice assistant for people with disabilities designed for basic tasks like reminders, notes, and command execution. This project focuses on privacy-first design and local processing rather than cloud-based services. It helped me understand speech input pipelines, command parsing, and building usable tools with minimal interfaces.</p>
+    </div>
+
+    <div class="project-card fade-in">
+      <h3>First-Person Movement System (Unity)</h3>
+      <video autoplay loop muted playsinline class="project-video">
+            <source src="assets/videos/fps-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+      </video>
+      <p>A custom first-person movement system built in Unity with a focus on responsiveness and player feel. This project explores grounded movement mechanics like acceleration, air control, jumping, and camera handling. I used it as a sandbox to understand how small changes in physics and input timing affect gameplay, and as a foundation for future action-focused games.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="mailto:aaryanjoshi217@gmail.com" class="email-btn">Email Me</a>
+  </footer>
+
+
+  <!-- IMPORTANT: map the bare specifier "three" to the ES module build -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js"
+    }
+  }
+  </script>
+
+  <!-- Load main as an ES module; main.js will import three and GLTFLoader -->
+  <script type="module" src="main.js"></script>
+  <script type="module" src="scroll.js"></script>
+
+
+</body>
+</html>
