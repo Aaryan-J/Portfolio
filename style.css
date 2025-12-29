@@ -37,14 +37,18 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* true center of canvas */
-  color: #1b005f7c;
+  transform: translate(-50%, -400%); /*truecenterofcanvas*/
+  color: #d6d6d67c;
   font-size: 3rem;
   font-weight: 500;
-  pointer-events: none; 
+  pointer-events: none;
   opacity: 1;
-  z-index: 10; 
+  z-index: 10;
   transition: opacity 0.5s ease;
+  -webkit-transform: translate(-50%, -400%);
+  -moz-transform: translate(-50%, -400%);
+  -ms-transform: translate(-50%, -400%);
+  -o-transform: translate(-50%, -400%);
 }
 
 
