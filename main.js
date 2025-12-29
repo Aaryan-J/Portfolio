@@ -42,7 +42,7 @@ let model = null;
 
 const loader = new GLTFLoader();
 loader.load(
-  "Assets/models/character.glb",
+  "assets/models/character.glb",
   (gltf) => {
     model = gltf.scene;
 
